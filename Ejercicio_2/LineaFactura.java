@@ -1,6 +1,6 @@
 package Ejercicio_2;
 
-public class LineaFactura {
+public class LineaFactura { //Se inicializan las propiedades de la clase de manera privada
     private int cantidad;
     private Producto producto;
 
@@ -9,6 +9,7 @@ public class LineaFactura {
         this.producto = producto;
     }
 
+    //Metodos set y funciones get para extraer y anexar productos y sus cantidades
     public void Set_producto(Producto prod){
         producto = prod;
     }
