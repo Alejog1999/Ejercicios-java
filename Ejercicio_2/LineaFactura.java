@@ -31,3 +31,4 @@ public class LineaFactura {
         return total;
     }
 }
+

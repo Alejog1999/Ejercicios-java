@@ -2,8 +2,9 @@ package Ejercicio_2;
 
 import java.util.Scanner;
 
-public class Main {
+public class Main1 {
     public static void main(String[] args) {
+    
         int cantidadP = 0;
         String nombreP;
         double preciop = 0;
@@ -36,12 +37,14 @@ public class Main {
                         cantP = leeScanner.nextInt();
 
                         Producto producto = new Producto(nombreP, preciop);
-                        cuenta.Agregar_productos(producto, cantidadP);
+                        cuenta.Agregar_productos(producto, cantP);
 
                         System.out.println("¿Desea anexar otro producto? seleccione: Y/N");
                         resp = leeScanner.next();
                         if (resp.equals("N")) {
                             break;
+                        }else{
+                            cantidadP++;
                         }
                     }
                     break;
