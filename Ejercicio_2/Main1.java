@@ -2,9 +2,8 @@ package Ejercicio_2;
 
 import java.util.Scanner;
 
-public class Main1 { //Creacion de clase Main principal
+public class Main1 {
     public static void main(String[] args) {
-    
         int cantidadP = 0;
         String nombreP;
         double preciop = 0;
@@ -12,10 +11,10 @@ public class Main1 { //Creacion de clase Main principal
         String resp = "";
         int op = 0;
 
-        Scanner leeScanner = new Scanner(System.in);          //Se inicializa el scanner
-        CuentaSupermercado cuenta = new CuentaSupermercado(); //Se crea el nuevo objeto llamado cuenta
+        Scanner leeScanner = new Scanner(System.in);
+        CuentaSupermercado cuenta = new CuentaSupermercado();
 
-        while (op == 3) {                                     //Se crea un bucle para tener el menu disponible mientras no se escoja la opcion salir
+        while (op != 3) {
             System.out.println("Bienvenido al sistema de facturacion");
             System.out.println("Por favor seleccione una opcion del menu");
             System.out.println("1) Ingresar producto");
@@ -23,8 +22,8 @@ public class Main1 { //Creacion de clase Main principal
             System.out.println("3) Salir");
             op = leeScanner.nextInt();
 
-            switch (op) {                                     //Se da el switch y se dan las opciones de pantalla por casos
-                case 1:                                       //Para el caso 1 se anexan los productos a la compra
+            switch (op) {
+                case 1:
                     System.out.println("Por favor ingrese la cantidad total de productos: ");
                     cantidadP = leeScanner.nextInt();
 
@@ -41,20 +40,17 @@ public class Main1 { //Creacion de clase Main principal
 
                         System.out.println("¿Desea anexar otro producto? seleccione: Y/N");
                         resp = leeScanner.next();
-                        if (resp.equals("N")) {
+                        if (resp.equalsIgnoreCase("N")) {
                             break;
-                        }else{
-                            cantidadP++;
                         }
                     }
                     break;
 
-                case 2:                                                 //Para el caso 2 se muestra el desprendible llamando el metodo
+                case 2:
                     System.out.println("Desprendible de compra");
                     cuenta.desprendible();
                     break;
             }
-
         }
         leeScanner.close();
     }
